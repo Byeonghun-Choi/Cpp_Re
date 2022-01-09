@@ -16,21 +16,23 @@ using namespace std;
 //     return 0;
 // }
 
+// 참고로, std::cout 에 붙어있는 :: 는 범위 지정연산자이다.
+// 1) class, 2) namespace
+// a::Print() 하면 a 영역에 있는 Print() 를 호출한다는 뜻이다. 
 namespace Audio {
-    void init() { std::cout << "Audio::init" << std::enld; }
+    void init() { std::cout << "Audio::init" << std::endl; }
 }
 namespace Video {
-    void init() { std::cout << "Video::init" << std::enld; }
+    void init() { std::cout << "Video::init" << std::endl; }
 }
 
 void init() {
-    std::cout << "Global init" << std::enld;
+    std::cout << "Global init" << std::endl;
 }
 
 int main() {
-    Audio::init();
+    Audio::init(); // Audio 영역에 있는 init을 호출하란 뜻.
     Vidoe::init();
 
     init();
 }
-
