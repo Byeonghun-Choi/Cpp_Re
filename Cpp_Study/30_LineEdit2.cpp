@@ -21,12 +21,17 @@ int getch(void)
     return ch;
 }
 //--------
-// 1. Validation
 
-
+// 1. Validation 정책은 변경이 가능해야 한다.
+//  방법 1) 변하는 것을 가상 함수로 뽑아낸다.
+//    => Tempalte Method Pattern
 
 class LineEdit {
     std::string data;
+
+    // 변하지 않는 코드(공통성)에서 변해야 하는 것(가변성)이 있다면
+    // 변해야 하는 것을 '가상함수'로 뽑아낸다.
+    virtual bool Validate(char c) { return isdigit(c); }
 
 public:
     std::string GetData()
@@ -40,7 +45,8 @@ public:
             if (c == '\n')
                 break;
 
-            if (isdigit(c)) {
+            // if (isdigit(c)) {
+            if (Validate(c)) {
                 data.push_back(c);
                 cout << c;
             }
@@ -51,9 +57,24 @@ public:
     }
 };
 
+// 이제 정책을 변경하고 싶다면, 파생 클래스에서 가상 함수를 재정의하면 됩니다.
+class AddressLineEdit : public LineEdit {
+public:
+    bool Validate(char c) override
+    {
+        return true;
+    }
+};
+
+// Template Method
+// 1) 런타임에 정책을 변경할 수 없습니다.
+// 2) 다른 종류의 클래스에서 해당 정책을 재사용할 수 없습니다.
+
 int main()
 {
-    LineEdit edit;
+    // LineEdit edit;
+    AddressLineEdit edit;
+
     while (1) {
         string s = edit.GetData();
         cout << "out: " << s << endl;
