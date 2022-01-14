@@ -3,6 +3,10 @@
 using namespace std;
 
 class CheckBox;
+
+// 중재자 패턴
+// : 복잡한 객체간의 관계(M:N)을 중재자와 객체의 1:1 관계로 처리합니다.
+// - 객체간의 관계가 복잡할 때, 중재하는 객체를 만들어서 상호 관계를 캡슐화 합니다.
 class MediatorCheckBox {
     std::vector<CheckBox*> v;
 
