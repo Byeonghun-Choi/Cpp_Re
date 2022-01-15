@@ -7,7 +7,7 @@ using namespace std;
 //   이것을 해결하기 위해서 C++ 에서는 class로 문자열을 감싸고 
 //   public 을 통해 쉽게 사용할 수 있도록 정의하고 만들었다.
 
-// string 말그대로 문자열을 다룬다
+// string 말그대로 문자열을 하나의 변수 타입처럼 다룬다.
 
 // string s.assign() : string s("Enco")과 동일한 기능
 
@@ -19,6 +19,10 @@ using namespace std;
 // cout << str;        // 문자열을 출력한다.
 // string str ("Enco") : str 변수를 "Enco"로 초기화.
 // string str = "Enco" : 마찬가지로 str 변수를 "Enco"로 초기화.
+
+// * string 클래스에 <, >, ==, + 등과 같은 연산자들을 사용할 수 있다.
+//  비교 (<, >, ==) : 두 문자열의 사전 순서를 비교, 또는 동일 여부를 확인할 수 있다.
+//  연결 (+) : 두 문자열을 이어주는 역할을 한다.
 
 #include <string>
 int main() 
