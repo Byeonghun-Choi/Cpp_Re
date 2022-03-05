@@ -32,7 +32,7 @@ void init() {
 
 int main() {
     Audio::init(); // Audio 영역에 있는 init을 호출하란 뜻.
-    Vidoe::init();
+    Vidoe::init(); // Video 영역에 있는 init을 호출하란 뜻.
 
     init();
 }
