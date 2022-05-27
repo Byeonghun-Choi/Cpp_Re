@@ -188,7 +188,7 @@ int main()
     cout << s1.pop() << endl;
     cout << s2.pop() << endl;
 } */
-
+/*
 class Stack {
 private:
     int buff[10];
@@ -227,4 +227,22 @@ int main()
 
     cout << s1.pop() << endl;
     cout << s2.pop() << endl;
-}
+}*/
+
+
+// class도 템플릿으로 만들 수 있습니다. 
+class Stack {
+    private:
+    int *buff;
+    int idx; 
+
+    public:
+    Stack(int sz = 10);
+    ~Stack();
+
+    void push(int v);
+    int pop();
+};
+
+// 클래스 템플릿은 타입추론이 불가능합니다.
+// -> 명시적으로 타입을 지정해주어야 합니다.
