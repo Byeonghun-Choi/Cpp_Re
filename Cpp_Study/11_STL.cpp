@@ -20,7 +20,7 @@ using namespace std;
 #include <stack>
 #include <vector>
 #include<list>
-
+/*
 int main() 
 {
     std::vector<int> v;
@@ -47,4 +47,32 @@ int main()
     // - 가장 마지막 요소를 체크하는 함수 : top()
     // - 스택에서 요소를 제거하는 함수 : pop()
     std::cout << s.top() << std::endl;
+}*/
+
+
+/* 탐색
+1. Tree (이진 트리)
+- 탐색 - O(log N)
+- 정렬 - O(N)
+
+2. HashTable => <unordered_map>
+bucket을 무한정 만들 수 없으므로, 충돌 발생 위험이 있다.
+C++에는 라이브러리가 내장되어 있다.
+- 탐색 : O(1)
+데이터가 저장되는 순서가 다르다.
+=> QuickSort O(NlogN)
+
+map => 키-값 쌍으로 이루어진 데이터
+C++ / Java
+C# / Swift - Dictionary 라고도 부른다.*/
+
+#include<map>
+
+int main()
+{
+    std::map <std::string, std::string> data;
+    data["홍길동"] = "010-1234-5678";
+    data["이순신"] = "010-2222-3333";
+
+    std::cout << data["홍길동"] << std::endl;
 }
