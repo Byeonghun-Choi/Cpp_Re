@@ -31,7 +31,7 @@
 // }
 
 
-#include <iosteam>
+#include<iostream>
 
 // 이게 원래 반복문
 // int sum(int n) 
@@ -46,30 +46,52 @@
 // }
 
 // 이것이 재귀를 이용한 반복문
-int recursiveSum(int n)
-{
-    int (n == 1) return 1;
-    reutrn n + recursiveSum(n-1);
-}
+// int recursiveSum(int n)
+// {
+//     int (n == 1) return 1;
+//     reutrn n + recursiveSum(n-1);
+// }
 
-int countPairings(bool taken[10])
-{
-    int firstFree = -1;
-    for (int i = 0; i < (n); i++) {
-        if(!taken[i]) {
-            firstFree = i;
-            break;
-        }
-    }
-    if(firstFree == -1) return 1;
-    int ret = 0;
+// int countPairings(bool taken[10])
+// {
+//     int firstFree = -1;
+//     for (int i = 0; i < (n); i++) {
+//         if(!taken[i]) {
+//             firstFree = i;
+//             break;
+//         }
+//     }
+//     if(firstFree == -1) return 1;
+//     int ret = 0;
 
-    for(int pairWith = (firstFree + 1); pairWith < (n); pairWith ++) {
-        if(!taken[pairWith] && areFriends[firstFree] [pairWith]) {
-            taken[firstFree] = taken[pairWith] = true;
-            ret += countPairings(taken)
-            taken[firstFree] = taken[pairWith] = false;
-        }
+//     for(int pairWith = (firstFree + 1); pairWith < (n); pairWith ++) {
+//         if(!taken[pairWith] && areFriends[firstFree] [pairWith]) {
+//             taken[firstFree] = taken[pairWith] = true;
+//             ret += countPairings(taken)
+//             taken[firstFree] = taken[pairWith] = false;
+//         }
+//     }
+//     return ret;
+// }
+
+
+int main()
+{
+    int x = 0, y = 0;
+    scanf("%d\n%d", &x, &y);
+    if (x > 0 && y > 0) {
+        printf("1\n");
     }
-    return ret;
+    else if(x < 0 && y > 0) {
+        printf("2\n");
+    }
+    else if(x < 0 && y < 0) {
+        printf("3\n");
+    }
+    else if(x > 0 && y < 0) {
+        printf("4\n");
+    }
+    else {
+        printf("원점이다.\n");
+    }
 }
